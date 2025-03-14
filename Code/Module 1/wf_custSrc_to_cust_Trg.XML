@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <!-- Informatica proprietary -->
 <!DOCTYPE POWERMART SYSTEM "powrmart.dtd">
-<POWERMART CREATION_DATE="03/14/2025 10:40:40" REPOSITORY_VERSION="189.98">
+<POWERMART CREATION_DATE="03/14/2025 13:30:57" REPOSITORY_VERSION="189.98">
 <REPOSITORY NAME="REP" VERSION="189" CODEPAGE="MS1252" DATABASETYPE="Oracle">
 <FOLDER NAME="CCMS" GROUP="" OWNER="Administrator" SHARED="NOTSHARED" DESCRIPTION="" PERMISSIONS="rwx---r--" UUID="a8e6cbeb-760e-4359-ab6b-c5913b27a434">
     <CONFIG DESCRIPTION ="Default session configuration object" ISDEFAULT ="YES" NAME ="default_session_config" VERSIONNUMBER ="1">
@@ -47,7 +47,18 @@
     </CONFIG>
     <WORKFLOW DESCRIPTION ="" ISENABLED ="YES" ISRUNNABLESERVICE ="NO" ISSERVICE ="NO" ISVALID ="YES" NAME ="wf_custSrc_to_cust_Trg" REUSABLE_SCHEDULER ="NO" SCHEDULERNAME ="Scheduler" SERVERNAME ="IS" SERVER_DOMAINNAME ="Domain" SUSPEND_ON_ERROR ="NO" TASKS_MUST_RUN_ON_SERVER ="NO" VERSIONNUMBER ="1">
         <SCHEDULER DESCRIPTION ="" NAME ="Scheduler" REUSABLE ="NO" VERSIONNUMBER ="1">
-            <SCHEDULEINFO SCHEDULETYPE ="ONDEMAND"/>
+            <SCHEDULEINFO SCHEDULETYPE ="ONSERVERINIT">
+                <STARTOPTIONS STARTDATE ="3/14/2025" STARTTIME ="10:49"/>
+                <SCHEDULEOPTIONS SCHEDULETYPE ="CUSTOM">
+                    <CUSTOM>
+                        <DAILYFREQUENCY HOURS ="0" MINUTES ="1"/>
+                        <REPEAT INTERVAL ="1" TYPE ="WEEKLY">
+                            <FILTER DAY ="FRIDAY"/>
+                        </REPEAT>
+                    </CUSTOM>
+                </SCHEDULEOPTIONS>
+                <ENDOPTIONS ENDAFTER ="1" ENDTYPE ="ENDAFTER"/>
+            </SCHEDULEINFO>
         </SCHEDULER>
         <TASK DESCRIPTION ="" NAME ="Start" REUSABLE ="NO" TYPE ="Start" VERSIONNUMBER ="1"/>
         <SESSION DESCRIPTION ="" ISVALID ="YES" MAPPINGNAME ="m_cust_target" NAME ="s_m_cust_target" REUSABLE ="NO" SORTORDER ="Binary" VERSIONNUMBER ="1">
@@ -91,6 +102,24 @@
             </SESSTRANSFORMATIONINST>
             <SESSTRANSFORMATIONINST ISREPARTITIONPOINT ="NO" PIPELINE ="0" SINSTANCENAME ="SEQTRANS" STAGE ="0" TRANSFORMATIONNAME ="SEQTRANS" TRANSFORMATIONTYPE ="Sequence"/>
             <CONFIGREFERENCE REFOBJECTNAME ="default_session_config" TYPE ="Session config"/>
+            <SESSIONCOMPONENT REFOBJECTNAME ="presession_variable_assignment" REUSABLE ="NO" TYPE ="Pre-session variable assignment">
+                <TASK DESCRIPTION ="" NAME ="presession_variable_assignment" REUSABLE ="NO" TYPE ="Command" VERSIONNUMBER ="1">
+                    <ATTRIBUTE NAME ="Fail task if any command fails" VALUE ="NO"/>
+                    <ATTRIBUTE NAME ="Recovery Strategy" VALUE ="Fail task and continue workflow"/>
+                </TASK>
+            </SESSIONCOMPONENT>
+            <SESSIONCOMPONENT REFOBJECTNAME ="postsession_success_variable_assignment" REUSABLE ="NO" TYPE ="Post-session success variable assignment">
+                <TASK DESCRIPTION ="" NAME ="postsession_success_variable_assignment" REUSABLE ="NO" TYPE ="Command" VERSIONNUMBER ="1">
+                    <ATTRIBUTE NAME ="Fail task if any command fails" VALUE ="NO"/>
+                    <ATTRIBUTE NAME ="Recovery Strategy" VALUE ="Fail task and continue workflow"/>
+                </TASK>
+            </SESSIONCOMPONENT>
+            <SESSIONCOMPONENT REFOBJECTNAME ="postsession_failure_variable_assignment" REUSABLE ="NO" TYPE ="Post-session failure variable assignment">
+                <TASK DESCRIPTION ="" NAME ="postsession_failure_variable_assignment" REUSABLE ="NO" TYPE ="Command" VERSIONNUMBER ="1">
+                    <ATTRIBUTE NAME ="Fail task if any command fails" VALUE ="NO"/>
+                    <ATTRIBUTE NAME ="Recovery Strategy" VALUE ="Fail task and continue workflow"/>
+                </TASK>
+            </SESSIONCOMPONENT>
             <SESSIONEXTENSION NAME ="Relational Writer" SINSTANCENAME ="CDW_SAPP_D_CUSTOMER_2387455_Insert" SUBTYPE ="Relational Writer" TRANSFORMATIONTYPE ="Target Definition" TYPE ="WRITER">
                 <CONNECTIONREFERENCE CNXREFNAME ="DB Connection" CONNECTIONNAME ="Oracle" CONNECTIONNUMBER ="1" CONNECTIONSUBTYPE ="Oracle" CONNECTIONTYPE ="Relational" VARIABLE =""/>
                 <ATTRIBUTE NAME ="Target load type" VALUE ="Normal"/>
@@ -132,7 +161,7 @@
             </SESSIONEXTENSION>
             <SESSIONEXTENSION NAME ="Relational Writer" SINSTANCENAME ="U_CDW_SAPP_D_CUSTOMER_23874551" SUBTYPE ="Relational Writer" TRANSFORMATIONTYPE ="Target Definition" TYPE ="WRITER">
                 <CONNECTIONREFERENCE CNXREFNAME ="DB Connection" CONNECTIONNAME ="Oracle" CONNECTIONNUMBER ="1" CONNECTIONSUBTYPE ="Oracle" CONNECTIONTYPE ="Relational" VARIABLE =""/>
-                <ATTRIBUTE NAME ="Target load type" VALUE ="Bulk"/>
+                <ATTRIBUTE NAME ="Target load type" VALUE ="Normal"/>
                 <ATTRIBUTE NAME ="Insert" VALUE ="YES"/>
                 <ATTRIBUTE NAME ="Update as Update" VALUE ="YES"/>
                 <ATTRIBUTE NAME ="Update as Insert" VALUE ="NO"/>
@@ -154,7 +183,7 @@
             <ATTRIBUTE NAME ="Enable Test Load" VALUE ="NO"/>
             <ATTRIBUTE NAME ="$Source connection value" VALUE =""/>
             <ATTRIBUTE NAME ="$Target connection value" VALUE =""/>
-            <ATTRIBUTE NAME ="Treat source rows as" VALUE ="Insert"/>
+            <ATTRIBUTE NAME ="Treat source rows as" VALUE ="Data driven"/>
             <ATTRIBUTE NAME ="Commit Type" VALUE ="Target"/>
             <ATTRIBUTE NAME ="Commit Interval" VALUE ="10000"/>
             <ATTRIBUTE NAME ="Commit On End Of File" VALUE ="YES"/>
