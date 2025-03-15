@@ -1,0 +1,25 @@
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_36435 : Starting execution of workflow [wf_custSrc_to_cust_Trg] in folder [CCMS] last saved by user [Administrator].
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_44206 : Workflow wf_custSrc_to_cust_Trg started with run id [132], run instance name [], run type [Concurrent Run Disabled].
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_44195 : Workflow [wf_custSrc_to_cust_Trg] service level [SLPriority:5,SLDispatchWaitTime:1800].
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_44253 : Workflow started. Clients will be notified
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_36330 : Start task instance [Start]: Execution started.
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_36318 : Start task instance [Start]: Execution succeeded.
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_36505 : Link [Start --> s_m_cust_target]: empty expression string, evaluated to TRUE.
+2025-03-15 08:30:34 : INFO : (5564 | 12528) : (IS | IS) : node01 : LM_36388 : Session task instance [s_m_cust_target] is waiting to be started.
+2025-03-15 08:30:34 : INFO : (5564 | 12356) : (IS | IS) : node01 : LM_36682 : Session task instance [s_m_cust_target]: started a process with pid [1532] on node [node01].
+2025-03-15 08:30:34 : INFO : (5564 | 12356) : (IS | IS) : node01 : LM_36330 : Session task instance [s_m_cust_target]: Execution started.
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6793 Fetching initialization properties from the Integration Service. : (Sat Mar 15 08:30:34 2025)]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [DISP_20305 The [Preparer] DTM with process id [1532] is running on node [node01].
+ : (Sat Mar 15 08:30:34 2025)]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [PETL_24036 Beginning the prepare phase for the session.]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6721 Started [Connect to Repository].]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6722 Finished [Connect to Repository].  It took [0.118005] seconds.]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6794 Connected to repository [REP] in domain [Domain] as user [Administrator] in security domain [Native].]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6721 Started [Fetch Session from Repository].]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6722 Finished [Fetch Session from Repository].  It took [0.0821571] seconds.]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6721 Started [Partition Group Formation].]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6722 Finished [Partition Group Formation].  It took [0.0307701] seconds.]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [PETL_24037 Finished the prepare phase for the session.]
+2025-03-15 08:30:35 : INFO : (5564 | 9308) : (IS | IS) : node01 : LM_36488 : Session task instance [s_m_cust_target] : [TM_6792 Notifying the Integration Service that the prepare phase has been completed. : (Sat Mar 15 08:30:35 2025)]
+2025-03-15 08:30:36 : INFO : (5564 | 6764) : (IS | IS) : node01 : LM_36318 : Session task instance [s_m_cust_target]: Execution succeeded.
+2025-03-15 08:30:37 : INFO : (5564 | 3964) : (IS | IS) : node01 : LM_36318 : Workflow [wf_custSrc_to_cust_Trg]: Execution succeeded.
