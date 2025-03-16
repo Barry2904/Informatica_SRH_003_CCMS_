@@ -1,0 +1,12 @@
+FIRST_NAME,MIDDLE_NAME,LAST_NAME,SSN,Credit_cardNO,APT_NO,STREET_NAME,CUST_CITY,CUST_STATE,CUST_COUNTRY,CUST_ZIP,CUST_PHONE,CUST_EMAIL
+Olivia,Nathaniel,Harper,982734982,4012888888881881,APT123,Rosewood Avenue,Dublin,OH,USA,43017,6142768820,ramu@mail.com
+Ethan,Julianne,Parker,238649752,6011000990139424,APT904,Lakewood Circle,Phoenix,AZ,USA,85022,6025554712,ethan_new.parker@webmail.net
+Sophia,Callum,Brooks,167829340,5105105105105100,APT728,Winding Brook Court,Austin,TX,USA,78731,5128947328,sophia.brooks@domain.org
+Jackson,Isobel,Lawson,759328671,3782822463100052,APT498,Elm Crossing,Raleigh,NC,USA,27609,9194523657,jackson.lawson@example.biz
+Amelia,Zachary,Frost,472983160,4556737586899855,APT712,Park Lane East,Boston,MA,USA,02115,6173427658,amelia.frost@coolmail.co
+Hannah,Benjamin,Steele,892731046,2223000048400011,APT564,Ridgeview Drive,Portland,OR,USA,97225,5037654289,hannah.steele@inboxnow.info
+Liam,Victoria,Collins,328192467,3411115972051382,APT301,Bluejay Road,Atlanta,GA,USA,30341,4049173642,liam.collins@email.net
+Zoe,Maxwell,Flynn,230486712,3566002020360505,APT402,Hawthorne Street,Columbus,OH,USA,43220,6147289641,zoe.flynn@message.com
+Lucas,Isla,Young,765923471,5404000000000001,APT220,Maple Grove,San Jose,CA,USA,95128,4085736942,lucas.young@e-service.us
+Charlotte,Logan,Morris,492183057,6011111111111117,APT390,Rainbow Drive,Nashville,NC,USA,37211,6157854239,charlotte.morris@mailhub.co
+
